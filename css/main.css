@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@800&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Variables */
+
+:root {
+	--PRIMARY-COLOR: #f1faee;
+	--SECONDARY-COLOR: #e63946;
+	--DARK-COLOR: #1d3557;
+	--FONT-HEADER: "Karla", sans-serif;
+	--FONT-NORMAL: "Inter", sans-serif;
+}
+
+body {
+	background-color: #edf6f9;
+	background-size: cover;
+}
+
+section {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+}
+
+.generator-container {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background-color: var(--DARK-COLOR);
+	padding: 4rem 2rem;
+	width: 90%;
+	border-radius: 20px;
+}
+
+.generate-password {
+	border-bottom: solid 1px #e63946;
+}
+
+.generator-container h1,
+span {
+	font-size: 1.5rem;
+	font-family: var(--FONT-HEADER);
+	font-weight: 800;
+	color: var(--PRIMARY-COLOR);
+}
+
+span {
+	color: var(--SECONDARY-COLOR);
+}
+
+.generator-container p {
+	margin-top: 0.2rem;
+	color: var(--PRIMARY-COLOR);
+	font-family: var(--FONT-NORMAL);
+	font-weight: 400;
+	font-size: 0.7rem;
+}
+
+.btn {
+	margin: 1.5rem 0;
+	padding: 0.25rem;
+	font-size: 1rem;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	font-family: var(--FONT-NORMAL);
+	font-weight: 500;
+	color: var(--PRIMARY-COLOR);
+	background-color: var(--SECONDARY-COLOR);
+	cursor: pointer;
+}
+
+h2 {
+	margin-top: 1rem;
+	color: var(--PRIMARY-COLOR);
+	font-family: var(--FONT-NORMAL);
+	font-weight: 500;
+}
+
+.btn-pass {
+	margin: 0.5rem 0;
+	width: 100%;
+	padding: 0.25rem;
+	font-size: 1rem;
+	border-radius: 5px;
+	border: 1px solid var(--SECONDARY-COLOR);
+	outline: none;
+	font-family: var(--FONT-NORMAL);
+	font-weight: 500;
+	color: var(--SECONDARY-COLOR);
+	background-color: var(--PRIMARY-COLOR);
+	display: none;
+	cursor: pointer;
+}
+
+.btn-pass:is(:active) {
+	opacity: 0.5;
+}
+
+/* Media Query */
+
+/* Galaxy fold 280px on portrait */
+
+@media all and (max-width: 300px) and (orientation: portrait) {
+	.generate-password h1,
+	span {
+		font-size: 1.2rem;
+	}
+
+	.generate-password p {
+		font-size: 0.6rem;
+	}
+}
+
+/* 500px on width portrait */
+
+@media all and (min-width: 500px) and (orientation: portrait) {
+	.generate-password h1,
+	span {
+		font-size: 2rem;
+	}
+
+	.generate-password p {
+		font-size: 1rem;
+	}
+}
+
+/* 600on width  */
+@media all and (min-width: 700px) and (orientation: portrait) {
+	.generator-container {
+		width: 70%;
+	}
+}
+
+@media all and (min-width: 1000px) and (orientation: landscape) {
+	.generator-container {
+		width: 40%;
+	}
+}
